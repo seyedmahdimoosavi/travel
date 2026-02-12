@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'YekanBakh';
-  src: url('./fonts/YekanBakh-Light.ttf') format('truetype');
+  src: url('/fonts/YEKANBAKH-LIGHT.TTF') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: 'YekanBakh';
-  src: url('./fonts/YekanBakh-Regular.ttf') format('truetype');
+  src: url('/fonts/YEKANBAKH-REGULAR.TTF') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: 'YekanBakh';
-  src: url('./fonts/YekanBakh-Bold.ttf') format('truetype');
+  src: url('/fonts/YEKANBAKH-BOLD.TTF') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -30,7 +30,7 @@
 
 @font-face {
   font-family: 'YekanBakh';
-  src: url('./fonts/YekanBakh-ExtraBold.ttf') format('truetype');
+  src: url('/fonts/YEKANBAKH-EXTRABOLD.TTF') format('truetype');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -38,14 +38,15 @@
 
 @font-face {
   font-family: 'YekanBakh';
-  src: url('./fonts/YekanBakh-ExtraBlack.ttf') format('truetype');
+  src: url('/fonts/YEKANBAKH-EXTRABLACK.TTF') format('truetype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'YekanBakh';
-  src: url('./fonts/YekanBakh-SEMIBOLD.ttf') format('truetype');
+  src: url('/fonts/YEKANBAKH-SEMIBOLD.TTF') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
