@@ -1,5 +1,5 @@
 import SearchBox from "../components/home/SearchBox.jsx";
-import Tours from "../components/home/tours.jsx";
+import Tours from "../components/home/Tours.jsx";
 import Header from "../components/layout/Header";
 
 const Home = () => {
