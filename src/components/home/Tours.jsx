@@ -36,28 +36,28 @@ export default function Tours() {
       id: 1,
       name: "تور شیراز",
       time: "15 تا 20 خرداد",
-      price: "9,820,000",
+      price: "۹,۸۲۰,۰۰۰",
       img: Shiraz1,
     },
     {
       id: 2,
       name: "تور شیراز",
       time: "15 تا 20 خرداد",
-      price: "9,820,000",
+      price: "۹,۸۲۰,۰۰۰",
       img: Shiraz2,
     },
     {
       id: 3,
       name: "تور شیراز",
       time: "15 تا 20 خرداد",
-      price: "9,820,000",
+      price: "۹,۸۲۰,۰۰۰",
       img: Shiraz3,
     },
     {
       id: 4,
       name: "تور شیراز",
       time: "15 تا 20 خرداد",
-      price: "9,820,000",
+      price: "۹,۸۲۰,۰۰۰",
       img: Shiraz4,
     },
   ];
@@ -437,13 +437,13 @@ export default function Tours() {
               <div className="w-[52px] h-[53px] rounded-2xl bg-black flex items-center justify-center">
                 <img src={Smstracking} />
               </div>
-              <span className="text-sm text-black">me@gmail.com</span>
+              <Link to="mailto:me@gmail.com" className="text-sm hover:text-black font-normal text-black">me@gmail.com</Link>
             </div>
             <div className="flex gap-2.5 w-full items-center">
               <div className="w-[52px] h-[53px] rounded-2xl bg-black flex items-center justify-center">
                 <img src={Call} />
               </div>
-              <span className="text-sm text-black">021-12345698</span>
+              <Link to="tel:02112345698" className="text-sm hover:text-black font-normal text-black">021-12345698</Link>
             </div>
           </div>
         </div>
@@ -809,64 +809,6 @@ const ContactForm = () => {
           font-size: 14px;
         }
       `}</style> */}
-    </div>
-  );
-};
-
-// export default ContactForm;
-
-const CurvedInfoBox = ({
-  title = "تور شیراز",
-  price = "9,820,0000",
-  currency = "تومان",
-  description = "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...",
-  buttonText = "مشاهده",
-  bgImage = "/path/to/your/image.jpg",
-}) => {
-  return (
-    <div className="relative w-full max-w-4xl mx-auto h-[320px] rounded-[40px] overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${bgImage})`,
-        }}
-      />
-
-      {/* Top Curved Section (Title + Price) */}
-      <div className="absolute top-0 right-0 w-2/3 h-32 bg-gradient-to-l from-gray-800/90 to-gray-900/95 rounded-bl-[80px] backdrop-blur-sm flex items-center justify-between px-12">
-        <div className="text-right">
-          <h2 className="text-white text-4xl font-bold mb-2">{title}</h2>
-        </div>
-        <div className="text-center border-r-2 border-white/30 pr-8">
-          <p className="text-gray-300 text-sm mb-1">{currency}</p>
-          <p className="text-white text-3xl font-bold tracking-wide">{price}</p>
-        </div>
-      </div>
-
-      {/* Bottom Curved Section (Description + Button) */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-r from-gray-900/95 via-gray-800/90 to-transparent rounded-tr-[100px] backdrop-blur-md flex items-center justify-between px-12">
-        <button className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-8 py-3 transition-all duration-300 group">
-          <span className="text-white text-lg font-medium">{buttonText}</span>
-          <svg
-            className="w-6 h-6 text-white transform group-hover:-translate-x-1 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-
-        <p className="text-white/90 text-lg max-w-md text-right leading-relaxed">
-          {description}
-        </p>
-      </div>
     </div>
   );
 };
