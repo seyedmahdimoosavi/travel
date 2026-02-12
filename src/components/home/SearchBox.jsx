@@ -163,7 +163,7 @@ const SearchBar = () => {
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
   const [passengers, setPassengers] = useState({
-    adults: 1,
+    adults: 0,
     children: 0,
     infants: 0,
   });
@@ -213,7 +213,7 @@ const SearchBar = () => {
       [type]:
         op === "increase"
           ? prev[type] + 1
-          : Math.max(type === "adults" ? 1 : 0, prev[type] - 1),
+          : Math.max(type === "adults" ? 0 : 0, prev[type] - 1),
     }));
   };
 
@@ -322,7 +322,7 @@ const SearchBar = () => {
 
         {/* ── باکس اصلی جستجو ── */}
         <div className="bg-[#F5F5F5] h-[120px] rounded-[30px] p-4 flex items-center">
-          <div className="flex items-center gap-2 w-full">
+          <div className="flex items-center gap-2 w-full relative">
             {/* ── تاریخ رفت ── */}
             <Popover open={openDeparture} onOpenChange={setOpenDeparture}>
               <PopoverTrigger asChild>
@@ -464,20 +464,20 @@ const SearchBar = () => {
               </PopoverContent>
             </Popover>
 
+            {/* آیکون جابجایی */}
+            <span
+              role="button"
+              tabIndex={0}
+              onClick={handleSwitch}
+              onKeyDown={(e) => e.key === "Enter" && handleSwitch(e)}
+              className="absolute right-[calc(50%-18px)] z-10 w-[28px] h-[28px] flex items-center justify-center"
+            >
+              <img src={SwitchIcon} className="w-5 h-5" alt="Switch" />
+            </span>
             {/* ── مقصد + آیکون Switch ── */}
             <Popover open={openDestination} onOpenChange={setOpenDestination}>
               <PopoverTrigger asChild>
                 <button className={`${inputBase} relative`}>
-                  {/* آیکون جابجایی */}
-                  <span
-                    role="button"
-                    tabIndex={0}
-                    onClick={handleSwitch}
-                    onKeyDown={(e) => e.key === "Enter" && handleSwitch(e)}
-                    className="absolute right-[-14px] z-10 w-[28px] h-[28px] flex items-center justify-center"
-                  >
-                    <img src={SwitchIcon} className="w-5 h-5" alt="Switch" />
-                  </span>
                   <div className="flex items-center gap-3">
                     <img src={LocationIcon} className="w-5 h-5" />
                     <span
@@ -529,14 +529,18 @@ const SearchBar = () => {
             {/* ── تعداد مسافر ── */}
             <Popover open={openPassengers} onOpenChange={setOpenPassengers}>
               <PopoverTrigger asChild>
-                <button className={inputBase}>
-                  <div className="flex items-center gap-3">
+                <button className={inputBase + " max-w-[115px]"}>
+                  <div className="flex items-center gap-1">
                     <User className="w-5 h-5 text-black" />
-                    <span className="text-xs text-black">
-                      {totalPassengers} نفر
+                    <span
+                      className={`text-xs ${totalPassengers > 0 ? "text-black" : "text-[#999999]"}`}
+                    >
+                      {totalPassengers > 0
+                        ? `${totalPassengers + " نفر"}`
+                        : "تعداد مسافر"}
                     </span>
                   </div>
-                  <ChevronDown className="w-5 h-5 text-black" />
+                  {/* <ChevronDown className="w-5 h-5 text-black" /> */}
                 </button>
               </PopoverTrigger>
               <PopoverContent
@@ -549,7 +553,7 @@ const SearchBar = () => {
                       key: "adults",
                       label: "بزرگسال",
                       desc: "بالای ۱۲ سال",
-                      min: 1,
+                      min: 0,
                     },
                     {
                       key: "children",
